@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kace Mağaza</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0d12; /* Kapkaranlık arka plan */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+        }
+
+        /* BEYAZ MAĞAZA İSMİ */
+        .magaza-adi {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 30px;
+            color: #ffffff; /* Saf Beyaz */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* YÜKLEME ÇUBUĞU KONTEYNER */
+        .progress-box {
+            width: 250px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        /* DOLAN ÇUBUK (Mor - Koyu Mavi Geçişli) */
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6a1b9a, #1565c0);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(106, 27, 154, 0.5);
+            animation: dolum 2s ease-in-out forwards;
+        }
+
+        @keyframes dolum {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* BEYAZ ALT YAZI */
+        .alt-yazi {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7); /* Hafif şeffaf beyaz */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="magaza-adi">KACE MAĞAZA</div>
+
+    <div class="progress-box">
+        <div class="progress-fill"></div>
+    </div>
+
+    <div class="alt-yazi">Yükleniyor...</div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://www.shopier.com/kacemc"; 
+        }, 2000);
+    </script>
+
+</body>
+</html>
