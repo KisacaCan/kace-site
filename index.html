@@ -1,84 +1,195 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kace Mağaza</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0b0d12; /* Kapkaranlık arka plan */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kace – Links</title>
 
-        /* BEYAZ MAĞAZA İSMİ */
-        .magaza-adi {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            color: #ffffff; /* Saf Beyaz */
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* YÜKLEME ÇUBUĞU KONTEYNER */
-        .progress-box {
-            width: 250px;
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
 
-        /* DOLAN ÇUBUK (Mor - Koyu Mavi Geçişli) */
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #6a1b9a, #1565c0);
-            border-radius: 20px;
-            box-shadow: 0 0 15px rgba(106, 27, 154, 0.5);
-            animation: dolum 2s ease-in-out forwards;
-        }
+    body {
+  margin: 0;
+  min-height: 100vh;
 
-        @keyframes dolum {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
+  background:
+    radial-gradient(circle at top left, #7a6bffb7, transparent 45%),
+    radial-gradient(circle at bottom right, #3a2cffa9, transparent 50%),
+    radial-gradient(circle at bottom left, #ff000070, transparent 45%),
+    linear-gradient(180deg, #0b0f2a, #000000);
 
-        /* BEYAZ ALT YAZI */
-        .alt-yazi {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7); /* Hafif şeffaf beyaz */
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-    </style>
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+    .card {
+      width: 360px;
+      padding: 28px 22px 20px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, #141847, #1f235c);
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* floating dots */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, #ffffff33 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: .15;
+      pointer-events: none;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      display: block;
+      box-shadow: 0 0 30px #7a6bff66;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      opacity: .7;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link {
+      height: 52px;
+      border-radius: 16px;
+      border: 1px solid #ffffff33;
+      background: linear-gradient(180deg, #1a1e55, #171b48);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: all .25s ease;
+    }
+
+    .link i {
+      opacity: .7;
+      transition: .25s;
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px #6b5cff55;
+    }
+
+    .link:hover i {
+      opacity: 1;
+      text-shadow: 0 0 12px currentColor;
+    }
+
+    .youtube {
+      border-color: #ff2a2a55;
+    }
+
+    /* bottom icons */
+    .bottom-icons {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .bottom-icons a {
+      color: #ffffffaa;
+      font-size: 18px;
+      transition: .25s;
+    }
+
+    .bottom-icons a:hover {
+      color: #fff;
+      text-shadow: 0 0 12px currentColor;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 12px;
+      opacity: .5;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="magaza-adi">KACE MAĞAZA</div>
+  <div class="card">
 
-    <div class="progress-box">
-        <div class="progress-fill"></div>
+    <!-- AVATAR -->
+    <img class="avatar" src="https://media.discordapp.net/attachments/728720586075013191/1455902725265952778/fasxasgaw_Calsma_Yuzeyi_1.png?ex=69566a93&is=69551913&hm=d3e10d7643d30740f6479844deb05f307e350c8b06dee22f5b991efd79f97943&=&format=webp&quality=lossless&width=1056&height=1056">
+
+    <h1>Kace</h1>
+    <div class="subtitle">Tüm Linklerim</div>
+
+    <!-- LINKS -->
+    <div class="links">
+      <a class="link" href="https://discord.gg/FsH8wMTGNz" target="_blank">
+        <i class="fa-brands fa-discord"></i>
+        Discord
+      </a>
+
+      <a class="link youtube" href="https://instagram.com/kacegame" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+        YouTube
+      </a>
+
+      <a class="link" href="https://www.youtube.com/@kacegame" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        İnstagram
+      </a>
+
+      <a class="link" href="https://www.shopier.com/kacemc" target="_blank">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Mağaza
+      </a>
     </div>
 
-    <div class="alt-yazi">Yükleniyor...</div>
+    <!-- BOTTOM ICONS -->
+    <div class="bottom-icons">
+      <a href="#"><i class="fa-brands fa-discord"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-solid fa-store"></i></a>
+    </div>
 
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://www.shopier.com/kacemc"; 
-        }, 2000);
-    </script>
+    <!-- FOOTER -->
+    <div class="footer">
+      © Kace Studio
+    </div>
+
+  </div>
 
 </body>
 </html>
