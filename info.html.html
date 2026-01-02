@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kace | Bilgi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #7a6bffb7, transparent 45%),
+        radial-gradient(circle at bottom right, #3a2cffa9, transparent 50%),
+        radial-gradient(circle at bottom left, #ff000070, transparent 45%),
+        linear-gradient(180deg, #0b0f2a, #000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      animation: bgMove 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgMove {
+      from { background-position: 0% 0%; }
+      to { background-position: 100% 100%; }
+    }
+
+    .box {
+      width: 390px;
+      background: linear-gradient(180deg, #141847, #1f235c);
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, #ffffff33 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: .12;
+      pointer-events: none;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .faq {
+      border-top: 1px solid #ffffff22;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ffffff22;
+    }
+
+    .faq-question {
+      padding: 14px 0;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question i {
+      transition: transform .25s ease;
+      opacity: .7;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 13px;
+      opacity: .85;
+      transition: all .3s ease;
+      padding-right: 18px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-bottom: 14px;
+    }
+
+    .mail {
+      padding: 14px 0;
+      text-align: center;
+      font-size: 13px;
+      opacity: .9;
+    }
+
+    .mail i {
+      margin-right: 6px;
+    }
+
+    .mail a {
+      color: #7a6bff;
+      text-decoration: none;
+    }
+
+    .mail a:hover {
+      text-decoration: underline;
+    }
+
+    .back {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #fff;
+      color: #1f235c;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    .back:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255,255,255,.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>Bilgi</h1>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Shopier üzerinden ödeme güvenli mi?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Evet. Tüm ödemeler Shopier’in güvenli altyapısı üzerinden
+          gerçekleştirilir. Kart bilgileriniz tarafımıza ulaşmaz.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Satın aldığım ürünler ne zaman teslim edilir?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Dijital ürünler ve VIP paketler genellikle otomatik veya kısa süre
+          içinde teslim edilir. Yoğunluk durumunda gecikme yaşanabilir.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          Siparişim gelmezse ne yapmalıyım?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Öncelikle Shopier sipariş detaylarını kontrol edin.
+          Sorun devam ederse bizimle iletişime geçebilirsiniz.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          İade veya iptal mümkün mü?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Dijital ürünlerde iade mümkün değildir.
+          Ancak teknik bir hata varsa destek sağlanır.
+        </div>
+      </div>
+
+<!-- İLETİŞİM (iki çizgi arasında) -->
+<div class="mail">
+  <div>İletişim</div>
+  <a href="mailto:kacestudio@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+    kacestudio@gmail.com
+  </a>
+</div>
+
+
+    <a class="back" href="index.html">
+      <i class="fa-solid fa-arrow-left"></i>
+      Geri Dön
+    </a>
+  </div>
+
+  <script>
+    document.querySelectorAll(".faq-question").forEach(q => {
+      q.addEventListener("click", () => {
+        q.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
